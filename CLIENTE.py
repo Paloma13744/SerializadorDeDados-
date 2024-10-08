@@ -42,8 +42,6 @@ def envio_msg_serializada(data):
 
     for format_name, serializer in formats.items():
         mensagem = serializer(data)
-        print(f'Enviando mensagem no formato {format_name}:')
-        print(mensagem)
         enviar_mensagem(mensagem)
 
 
@@ -55,17 +53,17 @@ def enviar_mensagem(mensagem):
     except Exception as e:
         print(f'Erro ao enviar a mensagem: {e}')
     finally:
-        client_socket.close()  # Fecha o socket após o uso
+        client_socket.close() 
 
 
 if __name__ == '__main__':
 
-    nome = input('Digite o seu nome: ')
-    cpf = input('Digite o seu CPF: ')
-    idade = input('Digite a sua idade: ')
-    mensagem = input('Digite a sua mensagem: ')
+    nome = input('Informe o seu nome: ')
+    cpf = input('Informe o seu CPF: ')
+    idade = input('Informe a sua idade: ')
+    mensagem = input('Informe a sua mensagem: ')
 
-    # Criar o dicionário com os dados
+    # Criando aqui o dicionário com os dados
     data = {
         'Nome': nome,
         'CPF': cpf,
