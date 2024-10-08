@@ -55,9 +55,6 @@ python cliente.py
 Insira os dados solicitados no terminal. O cliente enviará os dados serializados para o servidor em vários formatos.
 
 ## 📖 Exemplo de Uso
-Ao executar o cliente, será solicitado que o usuário insira:
-
-## 📖 Exemplo de Uso
 Ao executar o **cliente**, será solicitado que o usuário insira:
 
 ```bash
@@ -90,3 +87,10 @@ pip install pyyaml toml
 ``` bash
 pip install dicttoxml
 ```
+
+## 🛠️ Tecnologia Usada
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
+
+
