@@ -27,6 +27,7 @@ Este projeto implementa um sistema **Cliente-Servidor** para enviar e detectar d
 .
 ├── cliente.py   # Código do cliente responsável por serializar e enviar os dados.
 └── servidor.py  # Código do servidor que recebe e detecta o formato dos dados.
+.
 
 ## ⚙️ Como Executar
 
@@ -55,15 +56,18 @@ Insira os dados solicitados no terminal. O cliente enviará os dados serializado
 ## 📖 Exemplo de Uso
 Ao executar o cliente, será solicitado que o usuário insira:
 
-``bash
+## 📖 Exemplo de Uso
+Ao executar o **cliente**, será solicitado que o usuário insira:
+
+````bash
 Informe o seu nome: João
 Informe o seu CPF: 123456789
 Informe a sua idade: 30
 Informe a sua mensagem: Olá, mundo!
-``
+````
 
 O servidor exibirá:
-`` bash
+`` 
 Conexão de ('127.0.0.1', 12345) estabelecida.
 Tipo de formato: CSV
 Dados recebidos:
@@ -74,7 +78,6 @@ Conexão de ('127.0.0.1', 12345) estabelecida.
 Tipo de formato: JSON
 Dados recebidos:
 {"Nome": "João", "CPF": "123456789", "idade": "30", "mensagem": "Olá, mundo!"}
-
 ``
 
 
