@@ -15,12 +15,23 @@ Este projeto implementa um sistema **Cliente-Servidor** para enviar e detectar d
   - Envio de dados do cliente para o servidor.
   - Detecção do formato de dados no lado do servidor.
 
+## Instalação de Dependências
+``` bash
+pip install pyyaml toml
+```
+
+``` bash
+pip install dicttoxml
+```
+
 ## 🛠️ Tecnologias Utilizadas
 
 - **Python 3.x**
   - Bibliotecas:
     - `socket` (para comunicação TCP)
     - `csv`, `json`, `yaml`, `toml`, `dicttoxml` (para serialização)
+      
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 
 ## 📂 Estrutura do Projeto
@@ -79,18 +90,11 @@ Dados recebidos:
 ```
 
 
-## Instalação de Dependências
-``` bash
-pip install pyyaml toml
-```
 
-``` bash
-pip install dicttoxml
-```
 
-## 🛠️ Tecnologia Usada
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
+
 
 
 
