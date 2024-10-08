@@ -6,7 +6,6 @@ import dicttoxml
 import yaml
 import toml
 
-
 def serialize_csv(data):
     output = io.StringIO()
     writer = csv.DictWriter(output, fieldnames=data.keys())
@@ -14,22 +13,17 @@ def serialize_csv(data):
     writer.writerow(data)
     return output.getvalue().strip()
 
-
 def serialize_json(data):
     return json.dumps(data)
-
 
 def serialize_xml(data):
     return dicttoxml.dicttoxml(data).decode()
 
-
 def serialize_yaml(data):
     return yaml.dump(data)
 
-
 def serialize_toml(data):
     return toml.dumps(data)
-
 
 def envio_msg_serializada(data):
     formats = {
@@ -44,7 +38,6 @@ def envio_msg_serializada(data):
         mensagem = serializer(data)
         enviar_mensagem(mensagem)
 
-
 def enviar_mensagem(mensagem):  
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
@@ -55,9 +48,7 @@ def enviar_mensagem(mensagem):
     finally:
         client_socket.close() 
 
-
 if __name__ == '__main__':
-
     nome = input('Informe o seu nome: ')
     cpf = input('Informe o seu CPF: ')
     idade = input('Informe a sua idade: ')
@@ -67,9 +58,9 @@ if __name__ == '__main__':
     data = {
         'Nome': nome,
         'CPF': cpf,
-        'idade': idade,
-        'mensagem': mensagem
+        'Idade': idade,
+        'Mensagem': mensagem
     }
-    
-    
+
+    # Envio das mensagens serializadas
     envio_msg_serializada(data)
