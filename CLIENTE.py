@@ -59,10 +59,19 @@ def enviar_mensagem(mensagem):
 
 
 if __name__ == '__main__':
+
+    nome = input('Digite o seu nome: ')
+    cpf = input('Digite o seu CPF: ')
+    idade = input('Digite a sua idade: ')
+    mensagem = input('Digite a sua mensagem: ')
+
+    # Criar o dicionário com os dados
     data = {
-        'Nome': 'Paloma',
-        'CPF': '12994384663',
-        'idade': 24,
-        'mensagem': 'segue comprovante de endereço'
+        'Nome': nome,
+        'CPF': cpf,
+        'idade': idade,
+        'mensagem': mensagem
     }
+    
+    
     envio_msg_serializada(data)
