@@ -36,7 +36,7 @@ pip install dicttoxml
 
 ## 📂 Estrutura do Projeto
 
-├── cliente.py   # Código do cliente responsável por serializar e enviar os dados.
+└── cliente.py   # Código do cliente responsável por serializar e enviar os dados.
 
 └── servidor.py  # Código do servidor que recebe e detecta o formato dos dados.
 
