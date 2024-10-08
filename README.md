@@ -59,15 +59,15 @@ Ao executar o cliente, será solicitado que o usuário insira:
 ## 📖 Exemplo de Uso
 Ao executar o **cliente**, será solicitado que o usuário insira:
 
-``bash
+`bash
 Informe o seu nome: João
 Informe o seu CPF: 123456789
 Informe a sua idade: 30
 Informe a sua mensagem: Olá, mundo!
-``
+`
 
 O servidor exibirá:
-``bash
+`bash
 Conexão de ('127.0.0.1', 12345) estabelecida.
 Tipo de formato: CSV
 Dados recebidos:
@@ -78,7 +78,7 @@ Conexão de ('127.0.0.1', 12345) estabelecida.
 Tipo de formato: JSON
 Dados recebidos:
 {"Nome": "João", "CPF": "123456789", "idade": "30", "mensagem": "Olá, mundo!"}
-``
+`
 
 
 ## Instalação de Dependências
