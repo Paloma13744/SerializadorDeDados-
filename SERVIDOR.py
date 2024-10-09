@@ -22,16 +22,22 @@ def detectar_formato(data):
 
 def desserializar_data(data, formato):
     if formato == 'JSON':
-        return json.loads(data)
+        # Desserializa os dados JSON
+        dados = json.loads(data)
+        return dados
     elif formato == 'CSV':
+        # Desserializa os dados CSV
         reader = csv.DictReader(io.StringIO(data))
-        return list(reader)[0]  # Retorna o primeiro registro
+        dados = list(reader)
+        return dados[0] if dados else None  # Retorna o primeiro registro ou None se vazio
     elif formato == 'XML':
         return desserializar_xml(data)
     elif formato == 'YAML':
-        return yaml.safe_load(data)
+        dados = yaml.safe_load(data)
+        return dados
     elif formato == 'TOML':
-        return toml.loads(data)
+        dados = toml.loads(data)
+        return dados
     return None
 
 def desserializar_xml(data):
@@ -40,6 +46,36 @@ def desserializar_xml(data):
     for child in root:
         resultado[child.tag] = child.text
     return resultado
+
+def salvar_dados(dados, formato):
+    save_path = "C:\\Users\\0056515\\Documents\\"
+    
+    if formato == 'JSON':
+        with open(save_path + 'dados.json', 'w') as file:
+            json.dump(dados, file, indent=4)
+    elif formato == 'CSV':
+        with open(save_path + 'dados.csv', 'w', newline='') as file:
+            writer = csv.DictWriter(file, fieldnames=dados.keys())
+            writer.writeheader()
+            writer.writerow(dados)
+    elif formato == 'XML':
+        # Para XML, você deve converter os dados de volta para string antes de salvar
+        xml_string = dict_to_xml(dados)
+        with open(save_path + 'dados.xml', 'w') as file:
+            file.write(xml_string)
+    elif formato == 'YAML':
+        with open(save_path + 'dados.yaml', 'w') as file:
+            yaml.safe_dump(dados, file)
+    elif formato == 'TOML':
+        with open(save_path + 'dados.toml', 'w') as file:
+            toml.dump(dados, file)
+
+def dict_to_xml(data):
+    root = ET.Element('root')
+    for key, value in data.items():
+        child = ET.SubElement(root, key)
+        child.text = str(value)
+    return ET.tostring(root, encoding='unicode')
 
 def iniciar_servidor():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -58,6 +94,9 @@ def processar_cliente(client_socket):
     
     # Desserializa os dados recebidos
     dados_desserializados = desserializar_data(data, formato)
+
+    # Salva os dados no formato apropriado
+    salvar_dados(dados_desserializados, formato)
     
     # Exibe o tipo de formato e, em seguida, os dados recebidos
     print(f'Tipo de formato: {formato}')
