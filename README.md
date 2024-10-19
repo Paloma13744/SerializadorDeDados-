@@ -68,7 +68,7 @@ Insira os dados solicitados no terminal. O cliente enviará os dados serializado
 ## 📖 Exemplo de Uso
 Ao executar o **cliente**, será solicitado que o usuário insira:
 
-```
+```javascript
 Informe o seu nome: João
 Informe o seu CPF: 123456789
 Informe a sua idade: 30
@@ -76,7 +76,7 @@ Informe a sua mensagem: Olá, mundo!
 ```
 
 O servidor exibirá:
-```
+```javascript
 Conexão de ('127.0.0.1', 12345) estabelecida.
 Tipo de formato: CSV
 Dados recebidos:
