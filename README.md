@@ -73,7 +73,7 @@ Informe o seu nome: João
 Informe o seu CPF: 123456789
 Informe a sua idade: 30
 Informe a sua mensagem: Olá, mundo!
-´´´
+```
 
 O servidor exibirá:
 ```
@@ -87,7 +87,7 @@ Conexão de ('127.0.0.1', 12345) estabelecida.
 Tipo de formato: JSON
 Dados recebidos:
 {"Nome": "João", "CPF": "123456789", "idade": "30", "mensagem": "Olá, mundo!"}
-´´´
+```
 
 
 
